@@ -24,7 +24,7 @@ logging.basicConfig()
 config = read_config_subscriber(args.config)
 
 # initialize SDK
-fitc = FITConnectClient(Environment[config['sdk']['environment']], config['sdk']['client_id'], config['sdk']['client_secret'])
+fitc = FITConnectClient(Environment[config['sdk']['environment']], config['sdk']['client_id'], config['sdk']['client_secret'], insecure=True)
 
 # activate destination
 fitc.activate_destination(config['destination_id'])
